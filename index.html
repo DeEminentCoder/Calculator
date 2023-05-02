@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+    <script src="./bootstrap-5.2.2-dist/js/bootstrap.js"></script>
+    <script src="./bootstrap-5.2.2-dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="scientificCalc.css">
+    <title>Scientific calculator</title>
+</head>
+<body class="p-2">
+    <div id="bodyContainer" class="container-fluid shadow-sm border pt-2">
+        <div id="notificationBar" class="row">
+            <div id="time" class="col ms-3 mt-1"></div>
+            <div id="mode" class="col me-2 mt-1"><button class="btn btn-sm shadow-sm py-0" onclick="switchMode()">Switch mode</button></div>
+        </div>
+        
+        <div id="display" class="row shadow-sm mt-4 px-2 pt-4">
+            <div id="dispInput" class="col-12"></div>
+            <div id="dispResult" class="col-12"></div>
+        </div>
+
+        <div id="smallButt" class="row mt-2 mx-0 ps-0 pe-0">
+            <div class="col-3"><button class="btn shadow-sm"><span>e</span></button></div>
+            <div class="col-3"><button class="btn shadow-sm"><span>n</span></button></div>
+            <div class="col-3"><button class="btn shadow-sm"><span>sin</span></button></div>
+            <div class="col-3"><button class="btn shadow-sm"><span>deg</span></button></div>
+        </div>
+        <section id="bigButtons">
+            <div id="bigButt" class="row mt-3 mx-0 ps-0 pe-0">
+                <div class="col-3"><button onclick="clearAll()" class="btn shadow bg-danger"><span>c</span></button></div>
+                <div class="col-3"><button onclick="delInputs()" class="btn shadow"><span>←</span></button></div>
+                <div class="col-3"><button onclick="squareRoot()" class="btn shadow"><span>x²</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('/')" class="btn shadow text-white bg-warning"><span>/</span></button></div>
+            </div>
+            <div id="bigButt" class="row mt-3 mx-0 ps-0 pe-0">
+                <div class="col-3"><button onclick="inputButtonValue('7')" class="btn shadow"><span>7</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('8')" class="btn shadow"><span>8</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('9')" class="btn shadow"><span>9</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('*')" class="btn shadow text-white bg-warning"><span>X</span></button></div>
+            </div>
+            <div id="bigButt" class="row mt-3 mx-0 ps-0 pe-0">
+                <div class="col-3"><button onclick="inputButtonValue('4')" class="btn shadow"><span>4</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('5')" class="btn shadow"><span>5</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('6')" class="btn shadow"><span>6</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('-')" class="btn shadow text-white bg-warning"><span>-</span></button></div>
+            </div>
+            <div id="bigButt" class="row mt-3 mx-0 ps-0 pe-0">
+                <div class="col-3"><button onclick="inputButtonValue('1')" class="btn shadow"><span>1</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('2')" class="btn shadow"><span>2</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('3')" class="btn shadow"><span>3</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('+')" class="btn shadow text-white bg-warning"><span>+</span></button></div>
+            </div>
+            <div id="bigButt" class="row mt-3 mx-0 ps-0 pe-0">
+                <div class="col-6"><button onclick="inputButtonValue('0')" class="btn w-100 shadow"><span>0</span></button></div>
+                <div class="col-3"><button onclick="inputButtonValue('.')" class="btn shadow"><span>•</span></button></div>
+                <div class="col-3"><button onclick="equals()" class="btn shadow text-white bg-success"><span>=</span></button></div>
+            </div>
+        </section>
+        <div id="bottomLine" class="shadow border-2 border w-50 mx- container-fluid"></div>
+    </div>
+
+
+    <script>
+
+        
+        // let inputsStorage = []
+        const inputButtonValue =(buttonValue)=> {
+            dispInput.innerText += buttonValue;
+            // inputsStorage.push(dispInput.innerText)
+        }
+
+        const equals =()=> {
+            dispResult.innerHTML = eval(dispInput.innerText)
+        }
+
+        const clearAll =()=> {
+            dispInput.innerHTML = ("")
+            dispResult.innerHTML = ("")
+        }
+
+        const squareRoot =()=> {
+          dispResult.innerText = dispResult.innerText * dispResult.innerText
+          dispInput.innerText = dispInput.innerText * dispInput.innerText
+        }
+
+        const delInputs =()=> {
+            dispInput.innerText = dispInput.innerText.substring(0, dispInput.innerText.length - 1);
+            // dispInput.innerText.splice()
+        }
+
+
+        let todaysDate = new Date();
+        time.innerHTML = todaysDate.toDateString();
+
+        const switchMode = ()=> {
+            let bodyColor = document.body;
+            bodyColor.classList.toggle("dark-mode");
+            smallButt.classList.toggle("dispInputDarkMode");
+            bigButtons.classList.toggle("dispInputDarkMode");
+
+        }
+    </script>
+</body>
+</html>

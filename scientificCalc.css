@@ -1,0 +1,108 @@
+* {
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px gold solid; */
+}
+
+.dark-mode {
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+#bodyContainer {
+    width: 330px;
+    height: 630px;
+    border-radius: 30px;
+}
+
+.dispInputDarkMode{
+    filter: drop-shadow(0px 0px 1px rgb(255, 255, 255));
+}
+.btn-dark {
+    filter: drop-shadow(0px 0px 1px rgb(255, 0, 0));
+}
+
+#time {
+    font-size: 0.7em;
+}
+
+#mode button {
+    float: right;
+    font-size: 0.7em;
+    border-radius: 10px;
+}
+
+#display {
+    height: 150px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#dispInput {
+    height: 50px;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+}
+
+#dispResult {
+    height: 80px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 2.2em;
+}
+
+#smallButt div .btn {
+    width: 60px;
+    background-color: rgb(254, 254, 254);
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    border: 0;
+}
+#smallButt div .btn:hover{
+    box-shadow:0px 1px 100px inset rgba(0, 0, 0, 0.057) !important;
+}
+
+#bigButt div .btn {
+    padding-top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgb(254, 254, 254);
+    border: 0;
+}
+#bigButt div .btn:hover {
+    box-shadow:0px 1px 100px inset rgba(0, 0, 0, 0.057) !important;
+}
+#bigButt div .btn:active {
+    background-color: rgb(96, 213, 0);
+    color: rgb(252, 252, 252);
+}
+
+#bigButt .bg-danger {
+    text-align: center;
+    color: rgb(220,53,69);
+    background-color: rgba(220, 53, 70, 0.09) !important;
+}
+#bigButt .bg-danger:active {
+    background-color: rgb(220, 53, 70) !important;
+    color: rgb(252, 252, 252);
+}
+
+#bigButt .bg-warning:active {
+    background-color: rgb(0, 255, 255) !important;
+}
+
+#bigButt .bg-success:active {
+    background-color:violet !important;
+    color: #188050 !important;
+}
+
+#bottomLine {
+    margin-top: 30px;
+}
