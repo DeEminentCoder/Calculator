@@ -69,11 +69,13 @@
         // let inputsStorage = []
         const inputButtonValue =(buttonValue)=> {
             dispInput.innerText += buttonValue;
-            // inputsStorage.push(dispInput.innerText)
+            dispInput.innerText = dispInput.innerText.substring(0, 20);
         }
 
         const equals =()=> {
             dispResult.innerHTML = eval(dispInput.innerText)
+            dispResult.innerText = dispResult.innerText.substring(0, 15);
+
         }
 
         const clearAll =()=> {
@@ -82,7 +84,8 @@
         }
 
         const squareRoot =()=> {
-          dispResult.innerText = dispResult.innerText * dispResult.innerText
+            dispResult.innerText = dispResult.innerText * dispResult.innerText
+            dispResult.innerText = dispResult.innerText.substring(0, 15);
         //   dispInput.innerText = dispInput.innerText * dispInput.innerText
         }
 
